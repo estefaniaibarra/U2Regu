@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:Client.ViewModel"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             x:Class="Client.Views.EncuestView">
+    <ContentPage.BindingContext>
+        <vm:VotacionViewModel></vm:VotacionViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="True"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Votando}" Value="True" TargetType="Button">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackLayout.Style>
+            <StackLayout>
+                <StackLayout Padding="10,0"  HeightRequest="80"  Background="#DE3300" Orientation="Horizontal">
+                    <Label TextColor="#FFC107" Text="Mc Donald's"  HorizontalOptions="StartAndExpand" 
+                           FontAttributes="Bold"  VerticalOptions="Center" FontSize="26" FontFamily="Comic Sans MS"/>
+                    <Image Source="mcdonalds" Margin="15,15,0,15" ></Image>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Margin="15,0">
+                <StackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="18"/>
+                        <Setter Property="Margin" Value="15,30,15,0"/>
+                    </Style>
+
+                    <Style TargetType="Button">
+                        <Setter Property="CornerRadius" Value="35"/>
+                        <Setter Property="WidthRequest" Value="70"/>
+                        <Setter Property="HeightRequest" Value="70"/>
+                        <Setter Property="Margin" Value="2"/>
+                        <Setter Property="Background" Value="#FFC107"></Setter>
+                    </Style>
+                </StackLayout.Resources>
+                <Label Text="Tomando como referncia a 1 como mínimo y 5 cómo máximo, contesta la siguiente encuesta"  TextColor="Black"></Label>
+                <Label Text="{Binding Pregunta.Encuesta1}" />
+                <FlexLayout>
+                    <Button Text="{Binding Pregunta.Respuesta1}" Background="#99D164" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                1
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta2}" Background="#CDDE3A" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                2
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta3}" Background="#FFC663" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                3
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta4}" Background="#ED604C" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                4
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta5}" Background="#D9403A" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                5
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                </FlexLayout>
+                <Label Text="{Binding Pregunta.Encuesta2}"/>
+                <FlexLayout>
+                    <Button Text="{Binding Pregunta.Respuesta6}" Background="#99D164" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                6
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta7}" Background="#CDDE3A" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                7
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta8}" Background="#FFC663" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                8
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta9}" Background="#ED604C" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                9
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta10}" Background="#D9403A" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                10
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                </FlexLayout>
+
+                <Label Text="{Binding Pregunta.Encuesta3}"/>
+                <FlexLayout>
+                    <Button Text="{Binding Pregunta.Respuesta11}" Background="#99D164" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                            11
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta12}" Background="#CDDE3A" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                            12
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta13}" Background="#FFC663" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                            13
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta14}" Background="#ED604C" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                14
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button Text="{Binding Pregunta.Respuesta15}" Background="#D9403A" Command="{Binding VotarCommand}">
+                        <Button.CommandParameter>
+                            <system:Int32>
+                                15
+                            </system:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                </FlexLayout>
+            </StackLayout>
+           </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

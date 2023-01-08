@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="U2_Act5_HTTPClientVotatoon.Views.CrearPreguntaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:U2_Act5_HTTPClientVotatoon.Views" 
+             xmlns:viewmodels="clr-namespace:U2_Act5_HTTPClientVotatoon.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:EncuestaViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800" Background="White">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <DockPanel Background="#DE3300" >
+                <TextBlock Text="Mc Donald's" FontFamily="Comic Sans MS" Foreground="#FFC107" FontWeight="ExtraBlack" FontSize="35"
+                       Margin="10,0" VerticalAlignment="Center" />
+                <Image Source="/Assets/mcdonalds.png" HorizontalAlignment="Right" Margin="10"></Image>
+            </DockPanel>
+
+
+            <Border Grid.Row="1" BorderBrush="#FFC107" BorderThickness="0,10" Margin="0,40">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="18" Margin="0,10,0,5">Resultados de encuesta de satisfacción al cliente</TextBlock>
+                    <Grid Margin="60,0">
+                        <Grid.Resources>
+                            <Style TargetType="ProgressBar">
+                                <Setter Property="Margin" Value="0,2"/>
+                                <Setter Property="Foreground" Value="#FFC107"/>
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                            </Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                            <Style TargetType="Image">
+                                <Setter Property="Margin" Value="0,0,0,3"/>
+                            </Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="BorderBrush" Value="White"/>
+                                <Setter Property="TextAlignment" Value="Center"></Setter>
+                            </Style>
+                            
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height=".2*"/>
+                            <RowDefinition/>
+                            <RowDefinition Height=".2*"/>
+                            <RowDefinition/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".7*"/>
+                            <ColumnDefinition Width=".1*"/>
+                            <ColumnDefinition Width=".1*"/>
+                            <ColumnDefinition Width=".1*"/>
+                            <ColumnDefinition Width=".1*"/>
+                            <ColumnDefinition Width=".1*"/>
+                        </Grid.ColumnDefinitions>
+
+
+
+                        <TextBox Text="{Binding LaRespuesta.Respuesta1}" Grid.Row="0" Grid.Column="1"/>
+                        <TextBox Text="{Binding LaRespuesta.Respuesta2}" Grid.Row="0" Grid.Column="2"/>
+                        <TextBox Text="{Binding LaRespuesta.Respuesta3}" Grid.Row="0"  Grid.Column="3" />
+                        <TextBox Text="{Binding LaRespuesta.Respuesta4}" Grid.Row="0" Grid.Column="4" />
+                        <TextBox Text="{Binding LaRespuesta.Respuesta5}" Grid.Row="0"  Grid.Column="5"/>
+
+                        <TextBox Text="{Binding LaRespuesta.Respuesta6}" Grid.Row="2"   Grid.Column="1"/>
+                        <TextBox Text="{Binding LaRespuesta.Respuesta7}" Grid.Row="2"  Grid.Column="2"/>
+                        <TextBox Text="{Binding LaRespuesta.Respuesta8}" Grid.Row="2" Grid.Column="3"/>
+                        <TextBox Text="{Binding LaRespuesta.Respuesta9}" Grid.Row="2" Grid.Column="4"/>
+                        <TextBox Text="{Binding LaRespuesta.Respuesta10}" Grid.Row="2"   Grid.Column="5"/>
+
+                        <TextBox AcceptsReturn="True" Text="{Binding LaRespuesta.Respuesta11}" Grid.Row="4"  Grid.Column="1"/>
+                        <TextBox AcceptsReturn="True" Text="{Binding LaRespuesta.Respuesta12}" Grid.Row="4"  Grid.Column="2"/>
+                        <TextBox AcceptsReturn="True" Text="{Binding LaRespuesta.Respuesta13}" Grid.Row="4" Grid.Column="3"/>
+                        <TextBox AcceptsReturn="True" Text="{Binding LaRespuesta.Respuesta14}" Grid.Row="4"  Grid.Column="4"/>
+                        <TextBox AcceptsReturn="True" Text="{Binding LaRespuesta.Respuesta15}" Grid.Row="4"  Grid.Column="5"/>
+
+                        <TextBox  Margin="10,0" Text="{Binding LaRespuesta.Encuesta1}" Grid.Row="0" VerticalAlignment="Center" ></TextBox>
+                        <TextBox  Margin="10,0" Text="{Binding LaRespuesta.Encuesta2}" Grid.Row="2" VerticalAlignment="Center" ></TextBox>
+                        <TextBox  Margin="10,0" Text="{Binding LaRespuesta.Encuesta3}" Grid.Row="4" VerticalAlignment="Center" ></TextBox>
+
+                        <Image Grid.Column="1" Grid.Row="5"  Source="/Assets/estrellarellena.png" />
+                        <Image Grid.Column="2" Grid.Row="5"  Source="/Assets/estrellarellena.png" />
+                        <Image Grid.Column="3" Grid.Row="5"  Source="/Assets/estrellarellena.png" />
+                        <Image Grid.Column="4" Grid.Row="5"  Source="/Assets/estrellarellena.png" />
+                        <Image Grid.Column="5" Grid.Row="5"   Source="/Assets/estrellarellena.png" />
+
+                        <Button FontWeight="Bold" Foreground="#FFC107" Margin="0,10" Grid.Column="0" Grid.Row="6" Background="#DE3300" 
+                                Width="130" Command="{Binding IniciarCommand}" Content="Iniciar"></Button>
+
+                    </Grid>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
